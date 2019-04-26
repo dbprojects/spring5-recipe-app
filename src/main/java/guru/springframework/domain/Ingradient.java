@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Ingradient {
 	
+		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -25,6 +26,23 @@ public class Ingradient {
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	private UnitOfMeasure uom;
+	
+	
+	
+	public Ingradient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Ingradient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+		super();
+		this.description = description;
+		this.amount = amount;
+		this.uom = uom;
+		this.recipe = recipe;
+	}
+
+
 
 	public Long getId() {
 		return id;

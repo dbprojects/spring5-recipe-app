@@ -3,6 +3,7 @@
  */
 package guru.springframework.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -36,13 +37,15 @@ public class Recipe {
 	private String cookTime;
 	private String servings;
 	private String url;
+	
+	@Lob
 	private String directions;
 	
 	@Enumerated(value = EnumType.STRING)
 	private Difficulty difficulty;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-	private Set<Ingradient> ingradients;
+	private Set<Ingradient> ingradients = new HashSet<>();
 	
 	
 	@Lob
@@ -56,7 +59,7 @@ public class Recipe {
 	joinColumns = @JoinColumn(name="recipe_id"),
 	inverseJoinColumns = @JoinColumn(name= "category_id")
 	)
-	private Set<Category> categories;
+	private Set<Category> categories = new HashSet<>();
 	
 	public Long getId() {
 		return id;
@@ -130,6 +133,5 @@ public class Recipe {
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
-	
 	
 }
