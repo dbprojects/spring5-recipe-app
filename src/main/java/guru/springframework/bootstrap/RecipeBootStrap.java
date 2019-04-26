@@ -144,16 +144,17 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
 		
+		//need for bi-directional 
 		guacRecipe.setNotes(notes);
 		notes.setRecipe(guacRecipe);
 		
-		guacRecipe.getIngradients().add(new Ingradient("ripe avocados", new BigDecimal(2), eachUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("Kosher salt", new BigDecimal(5), teaSpoonUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("Minced red ionion or thinly sliced green onion", new BigDecimal(2), tableSpoonUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("Serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("Cilantro", new BigDecimal(2), tableSpoonUOM,guacRecipe));
-		guacRecipe.getIngradients().add(new Ingradient("freshly grated black pepper", new BigDecimal(2), eachUOM,guacRecipe));
+		guacRecipe.addIngradient(new Ingradient("ripe avocados", new BigDecimal(2), eachUOM));
+		guacRecipe.getIngradients().add(new Ingradient("Kosher salt", new BigDecimal(5), teaSpoonUOM));
+		guacRecipe.getIngradients().add(new Ingradient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUOM));
+		guacRecipe.getIngradients().add(new Ingradient("Minced red ionion or thinly sliced green onion", new BigDecimal(2), tableSpoonUOM));
+		guacRecipe.getIngradients().add(new Ingradient("Serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUOM));
+		guacRecipe.getIngradients().add(new Ingradient("Cilantro", new BigDecimal(2), tableSpoonUOM));
+		guacRecipe.getIngradients().add(new Ingradient("freshly grated black pepper", new BigDecimal(2), eachUOM));
 		
 		guacRecipe.getCategories().add(mexicanCategory);
 		guacRecipe.getCategories().add(americanCategory);

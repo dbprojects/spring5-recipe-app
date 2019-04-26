@@ -34,12 +34,11 @@ public class Ingradient {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Ingradient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+	public Ingradient(String description, BigDecimal amount, UnitOfMeasure uom) {
 		super();
 		this.description = description;
 		this.amount = amount;
-		this.uom = uom;
-		this.recipe = recipe;
+		this.uom = uom;		
 	}
 
 

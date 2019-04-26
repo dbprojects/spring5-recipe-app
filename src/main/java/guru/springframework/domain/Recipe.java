@@ -114,6 +114,7 @@ public class Recipe {
 	}
 	public void setNotes(Notes notes) {
 		this.notes = notes;
+		notes.setRecipe(this);
 	}
 	public Difficulty getDifficulty() {
 		return difficulty;
@@ -126,6 +127,13 @@ public class Recipe {
 	}
 	public void setIngradients(Set<Ingradient> ingradients) {
 		this.ingradients = ingradients;
+	}
+	
+	public Recipe addIngradient(Ingradient ingradient) {
+		ingradient.setReceipe(this);
+		this.ingradients.add(ingradient);
+		return this;
+		
 	}
 	public Set<Category> getCategories() {
 		return categories;
